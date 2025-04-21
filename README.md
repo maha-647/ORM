@@ -22,13 +22,37 @@ Enter the code for admin.py and models.py
 ### STEP 4:
 Execute Django admin and create details for 10 books
 
-## PROGRAM
+## PROGRAM:
+models.py
+=========
+
+from django.db import models
+from django.contrib import admin
+class Movie(models.Model):
+mid=models.IntegerField()
+    mname=models.CharField(max_length=100)
+    collection=models.IntegerField()
+    year=models.IntegerField()
+    rating=models.FloatField()
+
+class MovieAdmin(admin.ModelAdmin):
+    list_display=('mid','mname','collection','year','rating')
+
+
+admin.py
+=========
+
+from django.contrib import admin
+from .models import Movie,MovieAdmin
+admin.site.register(Movie,MovieAdmin)
 
 
 
 ## OUTPUT
 
-Include the screenshot of your admin page.
+
+![Screenshot 2025-04-12 144809](https://github.com/user-attachments/assets/4cf833f0-fad1-45dd-aac9-d87e53a0ae44)
+
 
 
 ## RESULT
